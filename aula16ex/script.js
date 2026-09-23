@@ -5,13 +5,17 @@ function adicionar() {
     const input = document.getElementById('num')
     const num = Number(input.value)
     
-    if (input.value === '' || Number.isNaN(num) || input < 1 || input > 100) {
-        windows.alert('Digite um numero valido!')
+    if (input.value === '' || Number.isNaN(num) || input.value < 1 || input.value > 100) {
+        window.alert('Digite um numero valido!')
         return
     }
-    
+    if (numbers.includes(num)) {
+        window.alert('O numero ja esta adicionado!')
+    }
+    else {
+     
     numbers.push(num)
-    
+    }
     tab.innerHTML = ''
 
     numbers.forEach((numero, indice) => {
